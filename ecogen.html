@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoGen – Turn Your Trash into Cash</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Floating Leaves -->
+  <div class="leaves">
+    <div class="leaf"></div>
+    <div class="leaf"></div>
+    <div class="leaf"></div>
+    <div class="leaf"></div>
+    <div class="leaf"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="header-section">
+    <img src="ecogen-logo.png" alt="EcoGen Logo" class="header-logo">
+    <div class="header-buttons">
+      <a href="#about" class="btn">About</a>
+      <a href="#materials" class="btn">Materials & Rewards</a>
+      <a href="#app" class="btn">App</a>
+      <a href="#simulation" class="btn">Simulation</a>
+      <a href="#purchase" class="btn">Purchase</a>
+      <a href="#creators" class="btn">Creators</a>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section id="about" class="card-section">
+    <h2>About EcoGen</h2>
+    <p>
+      EcoGen represents a new generation focused on sustainability and smarter living. 
+      Our Reverse Vending Machine (RVM) is a home-sized device that turns recyclables into cash or rewards. 
+      Simply insert your recyclables—like cans, bottles, and plastics—and the EcoGen machine automatically identifies, 
+      crushes, and records them in your connected mobile app.</p>
+    <p> Earn instant rewards for every item recycled!
+    </p>
+  </section>
+
+  <!-- Materials & Rewards Side by Side -->
+  <section class="side-by-side">
+    <div id="materials" class="card-section half-section">
+      <h2>Accepted Materials</h2>
+      <ul>
+        <li>Plastic Bottles (PET, HDPE)</li>
+        <li>Aluminium Cans</li>
+        <li>Glass Bottles</li>
+        <li>Polystyrene Containers</li>
+        <li>Chip Packets & Mixed Foil Items</li>
+      </ul>
+    </div>
+
+    <div id="rewards" class="card-section half-section">
+      <h2>Rewards You Can Earn</h2>
+      <ul>
+        <li>Cash or App Credit</li>
+        <li>Grocery Vouchers</li>
+        <li>Airtime & Data</li>
+        <li>Fuel Discounts</li>
+        <li>Donations to Green Charities</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- App Section -->
+  <section id="app" class="card-section">
+    <h2>EcoGen App</h2>
+    <p>
+      The EcoGen mobile app connects directly with your recycling machine. 
+      It tracks all items you recycle, converts them into reward points, and allows you to redeem rewards for cash or vouchers. 
+      You can monitor your impact, see how much waste you’ve prevented, and share achievements with friends.
+    </p>
+    <ul>
+      <li>Track your recycling progress</li>
+      <li>Earn and redeem points instantly</li>
+      <li>View environmental impact</li>
+      <li>Connect with a green community</li>
+    </ul>
+    <a href="#" class="download-btn">Download on Google Play</a>
+  </section>
+
+  <!-- Simulation Section -->
+  <section id="simulation" class="card-section">
+    <h2>Simulation</h2>
+    <p>Try our virtual demo! Simulate inserting recyclable items and see how much you could earn.</p>
+    <button class="simulate-btn" onclick="simulateRecycle()">Start Simulation</button>
+    <p id="simulation-result"></p>
+  </section>
+
+  <!-- Purchase Section -->
+  <section id="purchase" class="card-section">
+    <h2>Purchase Your EcoGen Machine</h2>
+    <p>Bring sustainability home! Compact, smart, and easy to use — includes mobile app integration and support.</p>
+
+    <div class="purchase-container">
+      <div class="purchase-card">
+        <img src="ecogen-vending.png" alt="EcoGen Vending Machine" class="purchase-image">
+        <h3>EcoGen Home Recycler</h3>
+        <p><strong>R3 999</strong> (Introductory Price)</p>
+
+        <form class="purchase-form" action="mailto:info@ecogen.co.za" method="post" enctype="text/plain">
+          <label for="name">Full Name:</label>
+          <input type="text" id="name" name="Name" required>
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="Email" required>
+
+          <label for="address">Delivery Address:</label>
+          <textarea id="address" name="Address" rows="3" required></textarea>
+
+          <label for="quantity">Quantity:</label>
+          <input type="number" id="quantity" name="Quantity" value="1" min="1" max="10" required>
+
+          <input type="submit" value="Place Order" class="purchase-btn">
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Creators -->
+  <section id="creators" class="card-section">
+    <h2>Creators</h2>
+    <p>Meet the passionate minds behind EcoGen:</p>
+    <p><strong>Tristan Xavier Robertson</strong>, <strong>Bianca Steyn</strong>, <strong>Tershlyn Sivasathan</strong>, and <strong>Hans Tshepo Poto</strong>.</p>
+  </section>
+
+  <footer style="text-align:center; padding:20px; background:#4CAF50; color:white;">
+    <p>© 2025 EcoGen | Designed for a Greener Future</p>
+  </footer>
+
+  <script>
+    // Simulation
+    function simulateRecycle() {
+      const items = Math.floor(Math.random() * 10) + 1;
+      const cash = items * 0.5;
+      document.getElementById('simulation-result').textContent =
+        `You recycled ${items} items and earned R${cash.toFixed(2)}! 🌱`;
+    }
+  </script>
+
+
+<script>
+  for (let i = 0; i < 15; i++) {
+    const leaf = document.createElement("div");
+    leaf.classList.add("leaf");
+    leaf.style.left = Math.random() * 100 + "vw";
+    leaf.style.animationDuration = 6 + Math.random() * 5 + "s";
+    leaf.style.animationDelay = Math.random() * 5 + "s";
+    document.body.appendChild(leaf);
+  }
+</script>
+
+</body>
+</html>
